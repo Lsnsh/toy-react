@@ -1,14 +1,19 @@
 ## 第一课｜ JSX 的原理和关键实现
 
-### 如何实现转换 `JSX` 语法的 createElement 函数？
+### 如何实现 `JSX` 语法转换后的 createElement 函数？
 
 ```js
 document.body.appendChild(
-  <div id="a" class="c">
-    <div>123</div>
-    <div></div>
-    <div></div>
-  </div>
+  createElement(
+    "div",
+    {
+      id: "a",
+      class: "c",
+    },
+    createElement("div", null, "123"),
+    createElement("div", null),
+    createElement("div", null)
+  )
 );
 ```
 
@@ -32,16 +37,11 @@ function createElement(tagName, attribute, ...children) {
 }
 
 document.body.appendChild(
-  createElement(
-    "div",
-    {
-      id: "a",
-      class: "c",
-    },
-    createElement("div", null, "123"),
-    createElement("div", null),
-    createElement("div", null)
-  )
+  <div id="a" class="c">
+    <div>123</div>
+    <div></div>
+    <div></div>
+  </div>
 );
 ```
 
