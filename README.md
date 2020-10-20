@@ -7,6 +7,7 @@
 ## 目录
 
 - [第一课](./notes/first-lesson)
+- [第二课](./notes/second-lesson)
 
 [1]: https://reactjs.org/tutorial/tutorial.html
 [2]: https://codepen.io/gaearon/pen/gWWZgR
